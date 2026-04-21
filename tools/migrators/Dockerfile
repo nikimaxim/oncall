@@ -1,9 +1,10 @@
-FROM python:3.12.10-alpine3.21
+FROM python:3.13.11-alpine3.22
 
 ENV PYTHONUNBUFFERED=1
 WORKDIR /app
 
 COPY requirements.txt requirements.txt
+RUN pip install -U pip
 RUN python3 -m pip install -r requirements.txt
 
 COPY . .
